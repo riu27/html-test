@@ -1,0 +1,53 @@
+<html>
+<head>
+</head>
+<body>
+<p> i can do this all day</p>
+<a href="/home/section5/margin.html">next</a>
+<a href="/home/section5/margin.html#rollers">next</a>
+<a href=https://www.google.com/search?client=ubuntu&channel=fs&q=presidency&ie=utf-8&oe=utf-8 target="_blank">next</a>
+<a href="mailto:zahidriu111@gmail.com"> send me an email!</a>
+<a href="myfile.zip"> download file</a>
+<br/>
+<p>click on buttons see what happens</p>
+<button onclick="myFunction1()">open in new window</button>
+<button onclick="myFunction2()">open blank</button>
+<button onclick="myFunction3()">open blank with text</button>
+<button onclick="myFunction4()">replace current window</button>
+<button onclick="myFunction5()">control appearance</button>
+<button onclick="myFunction6()">open multiple window</button>
+<button onclick="myFunction7()">open win</button>
+<button onclick="myFunction8()">close</button>
+<script>
+function myFunction1() {
+window.open("https://www.google.com/search?client=ubuntu&channel=fs&q=presidency&ie=utf-8&oe=utf-8");
+}
+function myFunction2() {
+var myWindow=window.open=window.open("","","width=200,height=100");
+}
+function myFunction3() {
+  var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+  myWindow.document.write("<p>This window's name is: " + myWindow.name + "</p>");
+}
+function myFunction4() {
+  var myWindow = window.open("", "_self");
+  myWindow.document.write("<p>I replaced the current window.</p>");
+}
+function myFunction5() {
+  window.open("http://www.iitd.ac.in/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+}
+function myFunction6() {
+window.open("https://www.google.com");
+window.open("https://www.youtube.com");
+}
+function myFunction7() {
+  myWindow = window.open("", "myWindow", "width=200,height=100");
+  myWindow.document.write("<p>This is 'myWindow'</p>");
+}
+
+function myFunction8() {
+  myWindow.close();
+}
+</script>
+</body>
+</html>

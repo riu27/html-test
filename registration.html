@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>REGISTRATION FORM</title>
+<script>
+function val() {
+var name=document.forms["regform"]["a"]
+var address=document.forms["regform"]["b"]
+var email=document.forms["regform"]["c"]
+var password=document.forms["regform"]["d"]
+var phone=document.forms["regform"]["e"]
+var sub = document.forms["regform"]["l"]
+var i;
+if(name.value == "") {
+window.alert("Please Enter your Name");
+name.focus();
+return false;
+}
+var alphaExp = /^[a-zA-Z]+$/;
+            if(document.regform.name.match(alphaExp))
+            {
+                window.alert("Please Enter only alphabets");
+name.focus();
+return false;
+            }
+if(address.value == "") {
+window.alert("Please Enter your Address");
+address.focus();
+return false;
+}
+if(email.value == "") {
+window.alert("Please Enter your Email");
+email.focus();
+return false;
+}
+if(email.value.indexOf("@",0)<0) {
+window.alert("Please Enter your Email");
+email.focus();
+return false;
+}
+if(email.value.indexOf(".",0)<0) {
+window.alert("Please Enter your Email");
+email.focus();
+return false;
+}
+if(password.value == "") {
+window.alert("Please Enter your Password");
+password.focus();
+return false;
+}
+if(phone.value == "") {
+window.alert("Please Enter your Contact");
+phone.focus();
+return false;
+}
+if(sub.value == "") {
+window.alert("Please Enter your Subject");
+sub.focus();
+return false;
+}
+if(sub.selectedIndex<1) {
+window.alert("Please Enter your Subject");
+sub.focus();
+return false;
+}
+}
+</script>
+</head>
+<body>
+<form action="" method="post" style="text-align:center" onsubmit="return val()" name="regform">
+<p>Name : <div><input type="text" name="a" placeholder="Enter Name"></div></p><br>
+<p>Address : <div><input type="text" name="b" placeholder="Enter Address"></div></p><br>
+<p>E-Mail : <div><input type="email" name="c" placeholder="Enter E-Mail"></div></p><br>
+<p>Password : <div><input type="password" name="d" placeholder="Enter Name"></div></p><br>
+<p>Phone : <div><input type="text" name="e" placeholder="Enter Contact"></div></p><br>
+Select Your Course :  <select value="l">
+  <option value="f">B.Tech</option>
+  <option value="g">Management</option>
+  <option value="h">Law</option>
+</select> 
+<br>
+<br>
+Comments : <div><input type="text" name="i" placeholder="Enter Comments"></div><br>
+<input type="submit" value="submit" name="j">
+<input type="reset" value="reset" name="k">
+</body>
+</html>

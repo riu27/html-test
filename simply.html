@@ -1,0 +1,255 @@
+<html>
+
+<head>
+
+<title>
+Registration Form
+</title>
+
+<script>
+function validation()
+{
+
+var name=document.forms["RegForm"]["name"];
+
+var address=document.forms["RegForm"]["address"];
+
+var password=document.forms["RegForm"]["pas"];
+var cpassword=document.forms["RegForm"]["pas1"];
+
+var email=document.forms["RegForm"]["email"];
+
+var mobile=document.forms["RegForm"]["mobile"];
+
+var state=document.forms["RegForm"]["state"];
+
+
+var gender=document.forms["RegForm"]["gender"];
+var age=document.forms["RegForm"]["age"];
+var birth=document.forms["RegForm"]["birth"];
+if(name.value=="")
+
+{
+
+window.alert("please enter you name correctly (only letters allowed!)");
+
+name.focus();
+
+return false();
+
+}
+else{
+for(i=0;i<name.length;i++)
+{
+if(!((name.charAt(i)>='a' && name.charAt(i)<='z')||(name.charAt(i)>='A' && name.charAt(i)<='Z')))
+{
+window.alert("Please enter valid Name.");
+name.focus();
+return false;
+}
+}
+}    
+
+if(address.value=="")
+
+{
+	
+window.alert("please enter your address");
+
+address.focus();
+
+return false();
+
+}
+
+if(password.value=="")
+
+{
+	
+window.alert("please enter password");
+
+password.focus();
+
+return false();
+
+}
+else if(cpassword.value=="")
+
+{
+	
+window.alert("please enter password");
+
+cpassword.focus();
+
+return false();
+
+}
+else if (password != cpassword)
+{ 
+alert ("\nPassword did not match: Please try again...") 
+return false; 
+}
+else
+{ 
+alert("Password Match: Welcome to GeeksforGeeks!") 
+return true;
+}
+if(email.value=="")
+
+{
+	
+window.alert("please enter valid email id");
+
+email.focus();
+
+return false();
+
+}
+
+if(email.value.indexOf("@",0)<0)
+
+{
+	
+window.alert("please enter valid email id");
+
+email.focus();
+
+return false();
+
+}
+
+if(email.value.indexOf(".",0)<0)
+
+{
+	
+window.alert("please enter valid email id");
+
+email.focus();
+
+return false();
+
+}
+
+if(mobile.value=="")
+
+{
+	
+window.alert("please enter correct mobile number");
+
+mobile.focus();
+
+return false();
+
+}
+
+if(state.value=="")
+
+{
+	
+window.alert("please select your state");
+
+state.focus();
+
+return false();
+
+}
+	
+if(state.selectedindex<1)
+
+{
+	
+window.alert("select your state");
+
+state.focus();
+
+return false();
+
+}
+
+
+}
+
+</script>
+
+</head>
+
+<body>
+<body bgcolor="">
+
+<h1>
+<center> Registration Form </center>
+</h1>
+
+<form name="RegForm" action="/submit.php" onsubmit="return validation()" method="pot">
+
+<center>
+
+NAME: 
+<input type="text" name="name" pattern="[A-Za-z]{3,10}">
+
+<br><br>
+AGE:
+<input type="number" name="age" min="20" max="80">
+<br><br>
+GENDER:
+<input type="radio" name="gender" value="Male" checked>Male</input>
+<input type="radio" name="gender" value="Female"  >Female</input>
+<input type="radio" name="gender" value="other" >Other</input>
+<br><br>
+YEAR OF BIRTH:
+<input type="date" name="birth" max="2019-03-22" min="1939-03-22">
+<br><br>
+ADDRESS:
+<br>
+<textarea name="address" id="ad" cols="30" row="3" oninvalid="alert('You must fill out the form!');" required></textarea>
+<br><br>
+MOBILE: <input type="int" name="mobile" pattern="[0-9]{10}" oninvalid="alert('You must fill out the form!');" required>
+
+<br><br>
+SELECT STATE:
+
+<select name="state" oninvalid="alert('You must fill out the form!');" required>
+
+<option value="KARNATAKA">KARNATAKA</option>
+
+<option value="TAMIL NADU">TAMIL NADU</option>
+
+<option value="KERALA">KERALA</option>
+
+<option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+
+<option value="MAHARASHTRA">MAHARASHTRA</option>
+
+</select>
+
+<br><br>
+UID:
+<input type="int" name="uid" pattern="[A-Za-z0-9]{5,10}" oninvalid="alert('You must fill out the form!');" required>
+<br><br>
+
+EMAIL ADDRESS:
+<input type="text" name="email" oninvalid="alert('You must fill out the form!');" required>
+<br><br>
+PASSWORD:
+<input type="password" name="pas" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+
+<br><br>
+CONFIRM PASSWORD:
+<input type="password" name="pas1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><p>* Should be greater than 8 Character.<br/>
+*atleast one number.<br/>
+* special character should be included</p>
+<p id="strong">
+</p>
+<input type="submit" name="send" value="Send">
+
+<input type="reset"/>
+
+</center>
+
+</form>
+
+</body>
+
+</html>
+
+

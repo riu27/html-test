@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>
+Registration Form
+</title>
+<script>
+function validation()
+{
+	var name=document.forms["RegForm"]["name"];
+	var address=document.forms["RegForm"]["address"];
+	var password=document.forms["RegForm"]["pas"];
+	var email=document.forms["RegForm"]["email"];
+	var telephone=document.forms["RegForm"]["telephone"];
+	var course=document.forms["RegForm"]["course"];
+
+		if(name.value=="")
+		{
+			window.alert("please enter name");
+			name.focus();
+			return false();
+		}
+var alphaExp = /^[a-zA-Z]+$/;
+if(document.regform.name.match(alphaExp))
+{
+window.alert("Please Enter only alphabets");
+name.focus();
+return false;
+            }
+		if(address.value=="")
+		{
+			window.alert("please enter address");
+			address.focus();
+			return false();
+		}
+		if(password.value=="")
+		{
+			window.alert("please enter password");
+			password.focus();
+			return false();
+		}
+		if(email.value=="")
+		{
+			window.alert("please enter email");
+			email.focus();
+			return false();
+		}
+		if(email.value.indexOf("@",0)<0)
+		{
+			window.alert("please enter valid email details");
+			email.focus();
+			return false();
+		}
+		if(email.value.indexOf(".",0)<0)
+		{
+			window.alert("please enter valid email details");
+			email.focus();
+			return false();
+		}
+		if(telephone.value=="")
+		{
+			window.alert("please enter telephone details");
+			telephone.focus();
+			return false();
+		}
+		if(course.value=="")
+		{
+			window.alert("please select your course");
+			course.focus();
+			return false();
+		}
+		if(course.selectedindex<1)
+		{
+			window.alert("select your course properly");
+			course.focus();
+			return false();
+		}
+
+}
+</script>
+</head>
+<body>
+<h1>
+Registration Form 
+</h1>
+<body background="/home/section5/Downloads/ppp.png" repeat="norepeat">
+<form name="RegForm" action="/submit.php" onsubmit="return validation()" method="pot">
+
+NAME: <input type="text" name="name">
+<br><br>
+ADDRESS: <input type="text" name="address">
+<br><br>
+EMAIL ADDRESS: <input type="text" name="email">
+<br><br>
+PASSWORD: <input type="password" name="pas">
+<br><br>
+TELEPHONE: <input type="text" name="telephone">
+<br><br>
+SELECT YOUR COURSE:
+<select name="course">
+<option value="B.tech">B.tech</option>
+<option value="LAW">LAW</option>
+<option value="MBA">MBA</option>
+</select>
+<br>
+<br>
+COMMENTS:<br>
+<textarea rows="3" cols="50">
+write comments....
+</textarea>
+<br><br>
+<input type="submit" name="send" value="Send">
+<input type="reset"/>
+</form>
+</body>
+</html>
